@@ -7,12 +7,12 @@ var audio;
 // }
 var rate = document.getElementById("rate");
 window.addEventListener("keydown", (event) => {
-  if (event.key === 'ArrowLeft') {
+  if (event.key === "ArrowLeft") {
     rate.value--;
-  } else if (event.key === 'ArrowRight') {
+  } else if (event.key === "ArrowRight") {
     rate.value++;
   }
-},)
+});
 keys.forEach((key) => {
   var note = key.dataset.note;
   if (note.split("").splice(1, 1)[0] === "s") {
