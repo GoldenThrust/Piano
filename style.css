@@ -1,0 +1,28 @@
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .movie {
+    width: 200px;
+    margin: 10px;
+  }
+  .movie img {
+    width: 100%;
+  }
+  .key{
+      box-shadow: 2px 2px 5px green;
+      transition: all 0.2s ease-in-out;
+    }
+  .black{
+      background-color: black;
+      color: aliceblue;
+      box-shadow: 1px 1px 3px purple;
+  }
+  :is(.key, .black):active{
+    box-shadow: none;
+    transform: translateY(5px)
+  }
+  .keys{
+    box-shadow: none;
+    transform: translateY(5px)
+  }
