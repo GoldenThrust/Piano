@@ -1,28 +1,37 @@
 .movie-container {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  justify-content: space-between;
 }
 .movie {
-  width: 200px;
-  margin: 10px;
-}
-.movie img {
-  width: 100%;
-}
-.key {
+  width: 60px;
+  height: 300px;
   box-shadow: 2px 2px 5px green;
   transition: all 0.2s ease-in-out;
 }
-.black {
+
+.black{
   background-color: black;
   color: aliceblue;
   box-shadow: 1px 1px 3px purple;
+  width: 55px;
+  height: 150px;
 }
-:is(.key, .black):active {
+.black h5{
+  font-size: 16px;
+}
+.black p{
+  font-size: 11px;
+}
+:is(.movie, .black):active {
   box-shadow: none;
   transform: translateY(5px);
 }
 .keys {
   box-shadow: none;
   transform: translateY(5px);
+}
+div{
+  position: relative;
 }

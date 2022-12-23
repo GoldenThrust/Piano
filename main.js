@@ -16,7 +16,7 @@ window.addEventListener("keydown", (event) => {
 keys.forEach((key) => {
   var note = key.dataset.note;
   if (note.split("").splice(1, 1)[0] === "s") {
-    key.classList.add("black");
+    key.parentNode.classList.add("black");
   }
   key.addEventListener("mousedown", () => {
     // Play the corresponding piano sound
