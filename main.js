@@ -37,11 +37,11 @@ for (let i = 0; i < notes.length; i++) {
       audio.preservesPitch = false;
       audio.currentTime = 0; // Rewind to the start of the sound
       audio.play();
-      keys[i].classList.add("keys");
+      keys[i].parentNode.classList.add("keys");
     }
   };
   var endNote = function () {
-    keys[i].classList.remove("keys");
+    keys[i].parentNode.classList.remove("keys");
     // audio.pause()
   };
   window.addEventListener("keydown", playNote);
