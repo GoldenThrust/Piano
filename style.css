@@ -7,14 +7,14 @@
 .movie {
   width: 60px;
   height: 300px;
-  box-shadow: 2px 2px 5px green;
-  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 6px 0px #a8a8a8, 0px 10px 4px black;
+  transition: all .15s ease-in-out;
 }
 
 .black{
   background-color: black;
   color: aliceblue;
-  box-shadow: 1px 1px 3px purple;
+  box-shadow: 0px 6px 0px grey, 0px 10px 4px black;
   width: 55px;
   height: 150px;
 }

@@ -19,7 +19,7 @@
       <p>Use arrow key left and right to change pitch</p>
       <div class="movie-container">
         <!--card body-->
-        <div class="movie card">
+        <div class="movie card mb-5 ms-5">
           <div class="card-body key" data-note="C">
             <h5 class="card-title">C</h5>
             <p class="card-text">A</p>
@@ -85,7 +85,7 @@
             <p class="card-text">Y</p>
           </div>
         </div>
-        <div class="movie card">
+        <div class="movie card me-5">
           <div class="card-body key" data-note="B">
             <h5 class="card-title">B</h5>
             <p class="card-text">J</p>
@@ -94,14 +94,7 @@
         <!--card body end-->
       </div>
     </div>
-    <input
-      id="rate"
-      type="range"
-      min="0.25"
-      max="10"
-      value="1"
-      class="d-none"
-    />
+    <div>Pitch : <span id="pitch">0.25</span></div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
