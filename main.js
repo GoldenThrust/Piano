@@ -1,20 +1,21 @@
-// JavaScript for playing the piano sounds
+// Variable declaration
 const keys = document.querySelectorAll(".key");
-var notes = ["a", "w", "s", "e", "d", "f", "r", "g", "t", "h", "y", "j"];
+var notes = ["q", "1", "w", "2", "e", "r", "3", "t", "4", "y", "5" , "u", "i", "6", "o", "7", "p", "z", "a","x","s", "c","d","v"];
 var pitch = document.getElementById("pitch");
+var rate = 1;
 var audio;
-var rate = 0.25;
+// pitch control
 window.addEventListener("keydown", (event) => {
   if (event.key === "ArrowLeft") {
     rate -= 0.25;
-    if (rate < 0.25) {
-      rate = 5;
+    if (rate < 0.5) {
+      rate = 10;
     }
     pitch.textContent = rate;
   } else if (event.key === "ArrowRight") {
     rate += 0.25;
-    if (rate > 5) {
-      rate = 0.25;
+    if (rate > 10) {
+      rate = 0.5;
     }
     pitch.textContent = rate;
   }
@@ -26,7 +27,7 @@ keys.forEach((key) => {
   }
   key.addEventListener("mousedown", () => {
     // Play the corresponding piano sound
-    const audio = new Audio(`sounds/${note}.wav`);
+    const audio = new Audio(`sounds/${note}.ogg`);
     audio.playbackRate = rate;
     audio.preservesPitch = false;
     audio.currentTime = 0; // Rewind to the start of the sound
@@ -38,7 +39,7 @@ keys.forEach((key) => {
 for (let i = 0; i < notes.length; i++) {
   var playNote = function (event) {
     if (event.key === notes[i]) {
-      audio = new Audio(`sounds/${keys[i].dataset.note}.wav`);
+     const audio = new Audio(`sounds/${keys[i].dataset.note}.ogg`);
       audio.playbackRate = rate;
       audio.preservesPitch = false;
       audio.currentTime = 0; // Rewind to the start of the sound
