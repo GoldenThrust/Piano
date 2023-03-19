@@ -1,6 +1,31 @@
 // Variable declaration
 const keys = document.querySelectorAll(".key");
-var notes = ["q", "1", "w", "2", "e", "r", "3", "t", "4", "y", "5" , "u", "i", "6", "o", "7", "p", "z", "a","x","s", "c","d","v"];
+var notes = [
+  "q",
+  "1",
+  "w",
+  "2",
+  "e",
+  "r",
+  "3",
+  "t",
+  "4",
+  "y",
+  "5",
+  "u",
+  "i",
+  "6",
+  "o",
+  "7",
+  "p",
+  "z",
+  "a",
+  "x",
+  "s",
+  "c",
+  "d",
+  "v",
+];
 var pitch = document.getElementById("pitch");
 var rate = 1;
 var audio;
@@ -39,7 +64,7 @@ keys.forEach((key) => {
 for (let i = 0; i < notes.length; i++) {
   var playNote = function (event) {
     if (event.key === notes[i]) {
-     const audio = new Audio(`sounds/${keys[i].dataset.note}.ogg`);
+      const audio = new Audio(`sounds/${keys[i].dataset.note}.ogg`);
       audio.playbackRate = rate;
       audio.preservesPitch = false;
       audio.currentTime = 0; // Rewind to the start of the sound
@@ -57,13 +82,15 @@ for (let i = 0; i < notes.length; i++) {
   window.addEventListener("touchend", endNote);
 }
 
-document.onreadstatechange = function() {
-if (document.readState == "complete"){
-for (let i = 0; i < notes.length; i++) {
-  setTimeout(()=> {
-  const audio = new Audio(`sounds/${keys[i].dataset.note}.ogg`);
-  audio.play();
-  },1000 * i);
-}
-}
-}
+// setTimeout(() => {
+  for (let i = 0; i < notes.length; i++) {
+    setTimeout(() => {
+      const audio = new Audio(`sounds/${keys[i].dataset.note}.ogg`);
+      audio.play();
+      keys[i].parentNode.classList.add("keys");
+      setTimeout(() => {
+        keys[i].parentNode.classList.remove("keys");
+      }, 500);
+    }, 500 * i);
+  }
+// }, 000);
