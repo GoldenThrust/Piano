@@ -90,6 +90,9 @@ for (let i = 0; i < notes.length; i++) {
       keys[i].parentNode.classList.add("keys");
       setTimeout(() => {
         keys[i].parentNode.classList.remove("keys");
+        if(i == notes.length - 1){
+          alert("check done");
+        }
       }, 500);
     }, 500 * i);
   }
