@@ -57,11 +57,13 @@ for (let i = 0; i < notes.length; i++) {
   window.addEventListener("touchend", endNote);
 }
 
-document.onreadstatechange = () => {
-if (document.readstatechange == complete){
+document.onreadstatechange = function() {
+if (document.readState == "complete"){
 for (let i = 0; i < notes.length; i++) {
+  setTimeout(()=> {
   const audio = new Audio(`sounds/${keys[i].dataset.note}.ogg`);
   audio.play();
+  },1000 * i);
 }
 }
 }
