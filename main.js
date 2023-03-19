@@ -63,3 +63,5 @@ for (let i = 0; i < notes.length; i++) {
   const audio = new Audio(`sounds/${keys[i].dataset.note}.ogg`);
   audio.play();
 }
+}
+}
