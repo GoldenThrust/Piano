@@ -82,7 +82,7 @@ for (let i = 0; i < notes.length; i++) {
   window.addEventListener("touchend", endNote);
 }
 
-// setTimeout(() => {
+setTimeout(() => {
   for (let i = 0; i < notes.length; i++) {
     setTimeout(() => {
       const audio = new Audio(`sounds/${keys[i].dataset.note}.ogg`);
@@ -96,4 +96,4 @@ for (let i = 0; i < notes.length; i++) {
       }, 500);
     }, 500 * i);
   }
-// }, 000);
+}, 1000);
