@@ -56,3 +56,10 @@ for (let i = 0; i < notes.length; i++) {
   window.addEventListener("touchstart", playNote);
   window.addEventListener("touchend", endNote);
 }
+
+document.onreadstatechange = () => {
+if (document.readstatechange == complete){
+for (let i = 0; i < notes.length; i++) {
+  const audio = new Audio(`sounds/${keys[i].dataset.note}.ogg`);
+  audio.play();
+}
